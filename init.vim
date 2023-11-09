@@ -17,6 +17,9 @@ Plug 'lervag/vimtex'
 " Snippets
 Plug 'SirVer/ultisnips'
 
+" Git
+Plug 'airblade/vim-gitgutter'
+
 " Completion
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
