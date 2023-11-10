@@ -1,7 +1,6 @@
 " Plugins {{{
 "Required
 call plug#begin('~/.config/nvim/plugged')
-
 " Aesthetics
 Plug 'itchyny/lightline.vim'
 Plug 'dracula/vim', { 'name': 'dracula' }
@@ -10,10 +9,16 @@ Plug 'luochen1990/rainbow'
 Plug 'romainl/vim-cool'
 
 " Using Tim
-Plug 'tim-clifford/vim-venus'
+Plug 'https://git.sr.ht/~tim-clifford/vim-venus'
 
-" Venus
+" Latex
 Plug 'lervag/vimtex'
+
+" Snippets
+Plug 'SirVer/ultisnips'
+
+" Git
+Plug 'airblade/vim-gitgutter'
 
 " Completion
 Plug 'neovim/nvim-lspconfig'
@@ -22,16 +27,21 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
-Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 Plug 'onsails/lspkind.nvim'
 Plug 'williamboman/nvim-lsp-installer'
 
 " Java
+Plug 'mfussenegger/nvim-dap'
 Plug 'mfussenegger/nvim-jdtls'
 
 " Movement
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-lua/plenary.nvim'
+
+" C 
+Plug 'jakemason/ouroboros'
+
+" Fun
 Plug 'ThePrimeagen/vim-be-good'
 
 " Required
@@ -53,6 +63,9 @@ set shiftwidth=4 smarttab
 set expandtab
 set tabstop=8 softtabstop=0
 set textwidth=120
+set foldenable
+set foldmethod=marker
+set linebreak
 
 " Visual
 set incsearch nohlsearch
@@ -61,6 +74,10 @@ set noshowmode
 set number
 set guicursor=
 set list
+set scrolloff=8
+set signcolumn=yes
+set colorcolumn=120
+
 
 fun! SetRelativenumber()
     if &filetype != "help"
@@ -70,10 +87,6 @@ endfun
 autocmd BufEnter,FocusGained * call SetRelativenumber()
 autocmd BufLeave,FocusLost   * set norelativenumber
 
-set scrolloff=8
-set signcolumn=yes
-set colorcolumn=120
-
 " Misc
 set undodir=~/.local/share/nvim/undo
 set undofile
@@ -81,11 +94,11 @@ set hidden
 set shortmess+=F
 set nrformats+=alpha
 set shortmess+=c
+syntax enable
 filetype indent on
 set autoindent
 set clipboard+=unnamedplus
-set foldenable
-set rnu
+
 let mapleader=' '
 " }}}
 
@@ -97,17 +110,21 @@ map <leader>v <cmd>vsplit<CR><C-W><C-W>
 map <leader>h <cmd>split<CR><C-W><C-W>
 map <leader>fe <cmd>Ex<CR>
 
-" Buffer nav
-map <leader>n <cmd>next<CR>
-map <leader>p <cmd>bprevious<CR>
-map <leader>d <cmd>bdelete<CR>
-map <leader>b <cmd>buffers<CR>
+" Buffers
+map <leader>bn <cmd>bnext<CR>
+map <leader>bp <cmd>bprev<CR>
+map <leader>bd <cmd>bdelete<CR>
+map <leader>bb <cmd>buffers<CR>:buffer<Space>
 
 " Terminal
 map <leader>t <cmd>terminal<CR>
 
 " Ouroboros
 autocmd! Filetype c,cpp map <leader>s :Ouroboros<CR>
+
+" Terminal
+map <leader>t <cmd>terminal<CR>
+tnoremap <Esc> <C-\><C-n>
 
 " Telescope find files command-line sugar.
 map <leader>ff <cmd>Telescope find_files<CR>
@@ -123,6 +140,13 @@ map <leader>gr :lua vim.lsp.buf.rename()<CR>
 map <leader>gn :lua vim.lsp.diagnostic.goto_next()<CR>
 map <leader>gj :lua vim.lsp.buf.implementation()<CR>
 map <leader>gt :lua vim.lsp.buf.type_definition()<CR>
+" }}}
+
+" Snippets {{{
+let g:UltiSnipsSnippetDirectories=["mySnippets","UltiSnips"]
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 " }}}
 
 " Venus {{{
@@ -230,8 +254,8 @@ lua require('lspconfig').vimls.setup{}
 lua require('lspconfig').tsserver.setup{}
 lua require('lspconfig').pyright.setup{}
 lua require('lspconfig').eslint.setup{}
-" lua require('lspconfig').bashls.setup{}
-" lua require('lspconfig').clangd.setup{}
+lua require('lspconfig').bashls.setup{}
+lua require('lspconfig').clangd.setup{}
 " }}}
 
 " Lightline config {{{
