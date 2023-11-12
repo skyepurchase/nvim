@@ -133,13 +133,13 @@ map <leader>fb <cmd>Telescope buffers<CR>
 map <leader>fh <cmd>Telescope help_tags<CR>
 
 " LSP things
-map <leader>gd :lua vim.lsp.buf.definition()<CR>
-map <leader>gu :lua vim.lsp.buf.references()<CR>
-map <leader>gr :lua vim.lsp.buf.rename()<CR>
+map <leader>gd <cmd>lua vim.lsp.buf.definition()<CR>
+map <leader>gu <cmd>lua vim.lsp.buf.references()<CR>
+map <leader>gr <cmd>lua vim.lsp.buf.rename()<CR>
 
-map <leader>gn :lua vim.lsp.diagnostic.goto_next()<CR>
-map <leader>gj :lua vim.lsp.buf.implementation()<CR>
-map <leader>gt :lua vim.lsp.buf.type_definition()<CR>
+map <leader>gn <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+map <leader>gj <cmd>lua vim.lsp.buf.implementation()<CR>
+map <leader>gt <cmd>lua vim.lsp.buf.type_definition()<CR>
 " }}}
 
 " Snippets {{{
