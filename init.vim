@@ -134,6 +134,11 @@ map <leader>fg <cmd>Telescope live_grep<CR>
 map <leader>fb <cmd>Telescope buffers<CR>
 map <leader>fh <cmd>Telescope help_tags<CR>
 
+" Git Gutter
+nmap <leader>hn <Plug>(GitGutterNextHunk)
+nmap <leader>hp <Plug>(GitGutterPrevHunk)
+nmap <leader>hh <Plug>(GitGutterPreviewHunk)
+
 " LSP things
 map <leader>gd <cmd>lua vim.lsp.buf.definition()<CR>
 map <leader>gu <cmd>lua vim.lsp.buf.references()<CR>
@@ -142,6 +147,11 @@ map <leader>gr <cmd>lua vim.lsp.buf.rename()<CR>
 map <leader>gn <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 map <leader>gj <cmd>lua vim.lsp.buf.implementation()<CR>
 map <leader>gt <cmd>lua vim.lsp.buf.type_definition()<CR>
+" }}}
+
+" Git Gutter {{{
+autocmd VimEnter * GitGutterLineHighlightsEnable
+set foldtext=gitgutter#fold#foldtext()
 " }}}
 
 " Snippets {{{
