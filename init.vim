@@ -151,7 +151,10 @@ map <leader>gt <cmd>lua vim.lsp.buf.type_definition()<CR>
 " }}}
 
 " Git Gutter {{{
-autocmd VimEnter * GitGutterLineHighlightsEnable
+au VimEnter * GitGutterLineNrHighlightsEnable
+au VimEnter * highlight link GitGutterAddLineNr DiffAdd
+au VimEnter * highlight link GitGutterChangeLineNr DiffChange
+au VimEnter * highlight link GitGutterDeleteLineNr DiffDelete
 set foldtext=gitgutter#fold#foldtext()
 " }}}
 
