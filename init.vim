@@ -169,8 +169,8 @@ let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 " }}}
 
 " Venus {{{
-nnoremap <leader>vd :let g:pandoc_defaults_file = '~/.config/pandoc/pandoc.yaml'
-nnoremap <leader>vl :let g:pandoc_defaults_file = '~/.config/pandoc/pandoc_light.yaml'
+nnoremap <leader>vd :let g:pandoc_defaults_file = '~/.config/pandoc/pandoc.yaml'<CR>
+nnoremap <leader>vl :let g:pandoc_defaults_file = '~/.config/pandoc/pandoc_light.yaml'<CR>
 let g:pandoc_defaults_file = '~/.config/pandoc/pandoc.yaml'
 let g:pandoc_header_dir = '~/.config/pandoc/headers'
 let g:pandoc_options = ''
