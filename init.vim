@@ -19,6 +19,7 @@ Plug 'SirVer/ultisnips'
 
 " Git
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 
 " Completion
 Plug 'neovim/nvim-lspconfig'
