@@ -280,18 +280,18 @@ let g:lightline = {
   \              [ 'gitbranch', 'readonly', 'filename', 'modified' ]                               
   \     ]                                                                                          
   \   },                                                                                           
-    \   'component': {                                                                             
-    \     'lineinfo': '%3l:%-2v',                                                                  
-    \   },                                                                                         
+  \   'component': {                                                                             
+  \     'lineinfo': '%3l:%-2v',                                                                  
+  \   },                                                                                         
   \   'component_function': {                                                                      
-  \     'gitbranch': 'fugitive#head',                                                              
+  \     'gitbranch': 'FugitiveHead',                                                              
   \   }                                                                                            
   \ }                                                                                              
 let g:lightline.separator = {                                                                      
-    \   'left': "\ue0b0", 'right': "\ue0b2"                                                        
+  \   'left': "\ue0b0", 'right': "\ue0b2"                                                        
   \}                                                                                               
 let g:lightline.subseparator = {                                                                   
-    \   'left': "\ue0b1", 'right': "\ue0b3"                                                        
+  \   'left': "\ue0b1", 'right': "\ue0b3"                                                        
   \}
 " }}}
 
