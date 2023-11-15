@@ -109,8 +109,8 @@ let mapleader=' '
 " General
 nnoremap <C-U> <C-U>zz
 nnoremap <C-D> <C-D>zz
-map <leader>v <cmd>vsplit<CR><C-W><C-W>
-map <leader>h <cmd>split<CR><C-W><C-W>
+map <leader>wv <cmd>vsplit<CR><C-W><C-W>
+map <leader>wh <cmd>split<CR><C-W><C-W>
 map <leader>fe <cmd>Ex<CR>
 
 " Buffers
