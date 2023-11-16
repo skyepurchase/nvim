@@ -272,6 +272,9 @@ lua require('lspconfig').pyright.setup{}
 lua require('lspconfig').eslint.setup{}
 lua require('lspconfig').bashls.setup{}
 lua require('lspconfig').clangd.setup{}
+
+" Close quickfix once a line is selected
+au FileType qf nnoremap <buffer> <CR> <CR>:cclose<CR>
 " }}}
 
 " Lightline config {{{
