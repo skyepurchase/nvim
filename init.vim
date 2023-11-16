@@ -151,6 +151,9 @@ map <leader>gt <cmd>lua vim.lsp.buf.type_definition()<CR>
 " }}}
 
 " Git Gutter {{{
+let g:gitgutter_sign_added = '|'
+let g:gitgutter_sign_modified = '|'
+let g:gitgutter_sign_removed = '|'
 au VimEnter * GitGutterLineNrHighlightsEnable
 au VimEnter * highlight link GitGutterAddLineNr DiffAdd
 au VimEnter * highlight link GitGutterChangeLineNr DiffChange
