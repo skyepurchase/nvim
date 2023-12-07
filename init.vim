@@ -148,6 +148,10 @@ map <leader>gr <cmd>lua vim.lsp.buf.rename()<CR>
 map <leader>gn <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 map <leader>gj <cmd>lua vim.lsp.buf.implementation()<CR>
 map <leader>gt <cmd>lua vim.lsp.buf.type_definition()<CR>
+
+map <leader>ls <cmd>lua vim.diagnostic.open_float()<CR>
+" Can be made more specific or repeat this command for different plugins
+map <leader>la <cmd>lua vim.lsp.buf.code_action()<CR>
 " }}}
 
 " Git Gutter {{{
