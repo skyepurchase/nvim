@@ -29,18 +29,22 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'onsails/lspkind.nvim'
-Plug 'williamboman/nvim-lsp-installer'
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
 
 " Java
 Plug 'mfussenegger/nvim-dap'
 Plug 'mfussenegger/nvim-jdtls'
 
+" C 
+Plug 'jakemason/ouroboros'
+
+" Haskell
+Plug 'neovimhaskell/haskell-vim'
+
 " Movement
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-lua/plenary.nvim'
-
-" C 
-Plug 'jakemason/ouroboros'
 
 " Fun
 Plug 'ThePrimeagen/vim-be-good'
@@ -269,7 +273,7 @@ EOF
 " }}}
 
 " Lspconfig {{{
-lua require('nvim-lsp-installer').setup({automatic_installation = true})
+lua require('mason').setup({automatic_installation = true})
 lua require('lspconfig').jdtls.setup{}
 lua require('lspconfig').html.setup{}
 lua require('lspconfig').cssls.setup{}
@@ -279,6 +283,8 @@ lua require('lspconfig').pyright.setup{}
 lua require('lspconfig').eslint.setup{}
 lua require('lspconfig').bashls.setup{}
 lua require('lspconfig').clangd.setup{}
+lua require('lspconfig').lua_ls.setup{}
+lua require('lspconfig').hls.setup{}
 
 " Close quickfix once a line is selected
 au FileType qf nnoremap <buffer> <CR> <CR>:cclose<CR>
