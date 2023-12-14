@@ -156,6 +156,9 @@ map <leader>gt <cmd>lua vim.lsp.buf.type_definition()<CR>
 map <leader>ls <cmd>lua vim.diagnostic.open_float()<CR>
 " Can be made more specific or repeat this command for different plugins
 map <leader>la <cmd>lua vim.lsp.buf.code_action()<CR>
+
+au CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+au CursorMoved <buffer> lua vim.lsp.buf.document_highlight()
 " }}}
 
 " Git Gutter {{{
