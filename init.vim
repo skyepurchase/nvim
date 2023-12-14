@@ -158,7 +158,7 @@ map <leader>ls <cmd>lua vim.diagnostic.open_float()<CR>
 map <leader>la <cmd>lua vim.lsp.buf.code_action()<CR>
 
 au CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-au CursorMoved <buffer> lua vim.lsp.buf.document_highlight()
+au CursorMoved <buffer> lua vim.lsp.buf.clear_references()
 " }}}
 
 " Git Gutter {{{
