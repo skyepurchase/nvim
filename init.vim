@@ -42,6 +42,9 @@ Plug 'jakemason/ouroboros'
 " Haskell
 Plug 'neovimhaskell/haskell-vim'
 
+" Markdown
+Plug 'preservim/vim-markdown'
+
 " Movement
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -187,6 +190,18 @@ let g:pandoc_header_dir = '~/.config/pandoc/headers'
 let g:pandoc_options = ''
 " }}}
 
+" Aglaea {{{
+au FileType markdown set conceallevel=2
+let g:vim_markdown_conceal = 1
+let g:vim_markdown_math = 1
+
+let g:vim_markdown_follow_anchor = 1
+let g:vim_markdown_anchorexpr = "'<<'.v:anchor.'>>'"
+let g:vim_markdown_autowrite = 1
+
+let g:vim_markdown_strikethrough = 1
+" }}}
+
 " Completion {{{
 set completeopt=menu,menuone,noselect
 
@@ -288,6 +303,7 @@ lua require('lspconfig').bashls.setup{}
 lua require('lspconfig').clangd.setup{}
 lua require('lspconfig').lua_ls.setup{}
 lua require('lspconfig').hls.setup{}
+lua require('lspconfig').marksman.setup{}
 
 " Close quickfix once a line is selected
 au FileType qf nnoremap <buffer> <CR> <CR>:cclose<CR>
