@@ -16,6 +16,7 @@ Plug 'https://git.sr.ht/~tim-clifford/vim-venus'
 Plug 'lervag/vimtex'
 
 " Snippets
+Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 
 " Git
@@ -29,6 +30,7 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 Plug 'onsails/lspkind.nvim'
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
@@ -209,6 +211,7 @@ lua <<EOF
     local cmp = require'cmp'
     local select_opts = {behavior = cmp.SelectBehavior.Select}
     local lspkind = require('lspkind')
+    local cmp_ultisnips_mappings = require('cmp_nvim_ultisnips.mappings')
 
     cmp.setup({
         snippet = {
@@ -233,7 +236,7 @@ lua <<EOF
                 elseif col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
                     fallback()
                 else
-                    cmp.complete()
+                    cmp_ultisnips_mappings.expand_or_jump_forwards(fallback)
                 end
             end, {'i', 's'}),
             
@@ -243,7 +246,7 @@ lua <<EOF
                 if cmp.visible() then
                     cmp.select_prev_item(select_opts)
                 else
-                    fallback()
+                    cmp_ultisnips_mappings.jump_backwards(fallback)
                 end
             end, {'i', 's'}),
         },
@@ -252,9 +255,10 @@ lua <<EOF
                 mode = 'symbol',
                 with_text = true,
                 menu = {
-                    buffer = "[buf]",
+                    buffer = "[Buf]",
                     nvim_lsp = "[LSP]",
-                    path = "[path]",
+                    path = "[Path]",
+                    ultisnips = "[Snip]"
                 },
             },
         },
