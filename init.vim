@@ -178,9 +178,11 @@ set foldtext=gitgutter#fold#foldtext()
 
 " Snippets {{{
 let g:UltiSnipsSnippetDirectories=["mySnippets","UltiSnips"]
-let g:UltiSnipsExpandTrigger = '<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+let g:UltiSnipsExpandTrigger = '<Tab>'
+let g:UltiSnipsJumpForwardTrigger = '<C-j>'
+let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
+
+let g:UltiSnipsEditSplit = 'vertical'
 " }}}
 
 " Venus {{{
