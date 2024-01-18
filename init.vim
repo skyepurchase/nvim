@@ -7,6 +7,7 @@ Plug 'dracula/vim', { 'name': 'dracula' }
 Plug 'sheerun/vim-polyglot'
 Plug 'luochen1990/rainbow'
 Plug 'romainl/vim-cool'
+Plug 'tjvr/vim-nearley' " Highlighting Nearley.js .ne files
 
 " Using Tim
 Plug 'https://git.sr.ht/~tim-clifford/vim-venus'
@@ -86,8 +87,6 @@ set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
 set list
 set scrolloff=8
 set signcolumn=yes
-set colorcolumn=120
-
 
 fun! SetRelativenumber()
     if &filetype != "help"
