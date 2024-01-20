@@ -73,7 +73,6 @@ set termguicolors
 set shiftwidth=4 smarttab
 set expandtab
 set tabstop=8 softtabstop=0
-set textwidth=120
 set foldenable
 set foldmethod=marker
 set linebreak
@@ -161,14 +160,16 @@ map <leader>ls <cmd>lua vim.diagnostic.open_float()<CR>
 " Can be made more specific or repeat this command for different plugins
 map <leader>la <cmd>lua vim.lsp.buf.code_action()<CR>
 
-au CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-au CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+"au CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+"au CursorMoved <buffer> lua vim.lsp.buf.clear_references()
 " }}}
 
 " Git Gutter {{{
 let g:gitgutter_sign_added = '|'
 let g:gitgutter_sign_modified = '|'
 let g:gitgutter_sign_removed = '|'
+let g:gitgutter_sign_modified = '|'
+let g:gitgutter_sign_modified_removed = '|'
 au VimEnter * GitGutterLineNrHighlightsEnable
 au VimEnter * highlight link GitGutterAddLineNr DiffAdd
 au VimEnter * highlight link GitGutterChangeLineNr DiffChange
@@ -203,6 +204,18 @@ let g:vim_markdown_anchorexpr = "'<<'.v:anchor.'>>'"
 let g:vim_markdown_autowrite = 1
 
 let g:vim_markdown_strikethrough = 1
+
+" This is crude, what about .mark, or .markdown?
+" TODO: Capitalise headers
+au BufNewFile *.md :call Create()
+
+function! Create()
+    let filename = substitute(expand("%:t"), ".md", "", "")
+    if (getline("1") !~ "# ".filename)
+        exe "normal!ggO# ".filename
+        exe "normal!ggw~"
+    endif
+endfunction
 " }}}
 
 " Completion {{{
