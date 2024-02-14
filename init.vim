@@ -179,7 +179,7 @@ set foldtext=gitgutter#fold#foldtext()
 
 " Snippets {{{
 let g:UltiSnipsSnippetDirectories=["mySnippets","UltiSnips"]
-let g:UltiSnipsExpandTrigger = '<Tab>'
+let g:UltiSnipsExpandTrigger = '<C-e>'
 let g:UltiSnipsJumpForwardTrigger = '<C-j>'
 let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
 
@@ -241,9 +241,9 @@ lua <<EOF
                 c = cmp.mapping.close(),
             }),
             
-            ['<CR>'] = cmp.mapping.confirm({select = true }),
+            ['<C-e>'] = cmp.mapping.confirm({select = true }),
 
-            ['<Tab>'] = cmp.mapping(function(fallback)
+            ['<C-j>'] = cmp.mapping(function(fallback)
                 local col = vim.fn.col('.') - 1
 
                 if cmp.visible() then
@@ -251,11 +251,11 @@ lua <<EOF
                 elseif col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
                     fallback()
                 else
-                    cmp_ultisnips_mappings.expand_or_jump_forwards(fallback)
+                    cmp_ultisnips_mappings.jump_forwards(fallback)
                 end
             end, {'i', 's'}),
             
-            ['<S-Tab>'] = cmp.mapping(function(fallback)
+            ['<C-k>'] = cmp.mapping(function(fallback)
                 local col = vim.fn.col('.') - 1
 
                 if cmp.visible() then
