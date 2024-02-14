@@ -1,0 +1,38 @@
+snippet it "Create jest it function"
+it("$1",
+    () => {
+	    // Act
+	    $2
+	    // Assert
+	    $3
+    }
+);
+endsnippet
+
+snippet expect "Create jest assertion"
+expect($1).toBe($2);
+endsnippet
+
+snippet describe "Create a jest describe function"
+describe("$1", () => {
+    $2
+});
+endsnippet
+
+snippet foreach "Create a forEach with function" i
+forEach(
+    function(item, ${2}index, ${3:$2}arr) {
+	    $1
+    }
+);
+endsnippet
+
+snippet const "Define a const variable" b
+const $1 = $2;
+endsnippet
+
+snippet if "Create a basic if statement"
+if ($1) {
+    $2
+}
+endsnippet
