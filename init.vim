@@ -16,7 +16,7 @@ Plug 'https://git.sr.ht/~tim-clifford/vim-venus'
 Plug 'lervag/vimtex'
 
 " Snippets
-Plug 'honza/vim-snippets'
+" Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 
 " Git
