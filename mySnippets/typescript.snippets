@@ -1,0 +1,9 @@
+snippet const "Create a constant variable"
+const $1 = $2;$0
+endsnippet
+
+snippet route "Create an Express route"
+router.$1('/$2', $3, (req: Request, res: Response) => {
+    $4
+});
+endsnippet
