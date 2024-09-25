@@ -219,11 +219,6 @@ function! Create()
 endfunction
 " }}}
 
-" Lspconfig {{{
-" Close quickfix once a line is selected
-au FileType qf nnoremap <buffer> <CR> <CR>:cclose<CR>
-" }}}
-
 " Lightline config {{{
 set laststatus=2
 set noshowmode
