@@ -10,7 +10,7 @@ Plug 'romainl/vim-cool'
 Plug 'tjvr/vim-nearley' " Highlighting Nearley.js .ne files
 
 " Using Tim
-Plug 'https://git.sr.ht/~tim-clifford/vim-venus'
+Plug 'https://git.sr.ht/~ecc/vim-venus'
 
 " Latex
 Plug 'lervag/vimtex'
@@ -78,7 +78,7 @@ set foldmethod=marker
 set linebreak
 
 " Visual
-set incsearch nohlsearch
+set incsearch
 set foldmethod=marker
 set noshowmode
 set number
@@ -116,6 +116,7 @@ let mapleader=' '
 " General
 nnoremap <C-U> <C-U>zz
 nnoremap <C-D> <C-D>zz
+nnoremap <CR> <cmd>noh<CR><CR>
 map <leader>wv <cmd>vsplit<CR><C-W><C-W>
 map <leader>wh <cmd>split<CR><C-W><C-W>
 map <leader>fe <cmd>Ex<CR>
@@ -218,111 +219,7 @@ function! Create()
 endfunction
 " }}}
 
-" Completion {{{
-set completeopt=menu,menuone,noselect
-
-lua <<EOF
-    -- Setup nvim-cmp.
-    local cmp = require'cmp'
-    local select_opts = {behavior = cmp.SelectBehavior.Select}
-    local lspkind = require('lspkind')
-    local cmp_ultisnips_mappings = require('cmp_nvim_ultisnips.mappings')
-
-    cmp.setup({
-        snippet = {
-            -- REQUIRED - you must specify a snippet engine
-            expand = function(args)
-                vim.fn["UltiSnip#Anon"](args.body) -- `ultisnips`
-            end,
-        },
-        mapping = {
-            ['<C-n>'] = cmp.mapping({
-                i = cmp.mapping.abort(),
-                c = cmp.mapping.close(),
-            }),
-            
-            ['<C-e>'] = cmp.mapping.confirm({select = true }),
-
-            ['<C-j>'] = cmp.mapping(function(fallback)
-                local col = vim.fn.col('.') - 1
-
-                if cmp.visible() then
-                    cmp.select_next_item(select_opts)
-                elseif col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
-                    fallback()
-                else
-                    cmp_ultisnips_mappings.jump_forwards(fallback)
-                end
-            end, {'i', 's'}),
-            
-            ['<C-k>'] = cmp.mapping(function(fallback)
-                local col = vim.fn.col('.') - 1
-
-                if cmp.visible() then
-                    cmp.select_prev_item(select_opts)
-                else
-                    cmp_ultisnips_mappings.jump_backwards(fallback)
-                end
-            end, {'i', 's'}),
-        },
-        formatting = {
-            format = lspkind.cmp_format {
-                mode = 'symbol',
-                with_text = true,
-                menu = {
-                    buffer = "[Buf]",
-                    nvim_lsp = "[LSP]",
-                    path = "[Path]",
-                    ultisnips = "[Snip]"
-                },
-            },
-        },
-        sources = cmp.config.sources({
-            { name = 'nvim_lsp' },
-            { name = 'ultisnips' },
-        }, {
-            { name = 'buffer' },
-        }),
-        experimental = {
-            ghost_text = true
-        }
-    })
-
-    cmp.setup.cmdline('/', {
-        sources = {
-            { name = 'buffer' }
-        }
-    })
-
-    cmp.setup.cmdline(':', {
-        sources = cmp.config.sources({
-            { name = 'path' }
-        }, {
-            { name = 'cmdline' }
-        })
-    })
-
-    -- Setup lspconfig.
-    local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
-EOF
-
-" }}}
-
 " Lspconfig {{{
-lua require('mason').setup({automatic_installation = true})
-lua require('lspconfig').jdtls.setup{}
-lua require('lspconfig').html.setup{}
-lua require('lspconfig').cssls.setup{}
-lua require('lspconfig').vimls.setup{}
-lua require('lspconfig').tsserver.setup{}
-lua require('lspconfig').pyright.setup{}
-lua require('lspconfig').eslint.setup{}
-lua require('lspconfig').bashls.setup{}
-lua require('lspconfig').clangd.setup{}
-lua require('lspconfig').lua_ls.setup{}
-lua require('lspconfig').hls.setup{}
-lua require('lspconfig').marksman.setup{}
-
 " Close quickfix once a line is selected
 au FileType qf nnoremap <buffer> <CR> <CR>:cclose<CR>
 " }}}
