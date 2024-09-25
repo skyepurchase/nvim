@@ -116,6 +116,9 @@ let mapleader=' '
 " General
 nnoremap <C-U> <C-U>zz
 nnoremap <C-D> <C-D>zz
+nnoremap n nzz
+nnoremap N Nzz
+
 nnoremap <CR> <cmd>noh<CR><CR>
 map <leader>wv <cmd>vsplit<CR><C-W><C-W>
 map <leader>wh <cmd>split<CR><C-W><C-W>
