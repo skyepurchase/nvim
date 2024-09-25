@@ -215,9 +215,9 @@ au BufNewFile *.md :call Create()
 
 function! Create()
     let filename = substitute(expand("%:t"), ".md", "", "")
-    if (getline("1") !~ "# ".filename)
-        exe "normal!ggO# ".filename
-        exe "normal!ggw~"
+    let title = substitute(filename, "-", " ", "g")
+    if (getline("1") !~ "# ".title)
+        exe "normal!ggO# ".title
     endif
 endfunction
 " }}}
