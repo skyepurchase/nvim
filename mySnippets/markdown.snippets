@@ -1,0 +1,95 @@
+snippet [[ "Create document link"
+[[${1:${VISUAL}}]]
+endsnippet
+
+snippet ## "Create header link"
+[[#${1:${VISUAL}}]]
+endsnippet
+
+snippet _ "Italicise"
+_$1_
+endsnippet
+
+snippet ** "Bolden"
+**$1**
+endsnippet
+
+snippet $ "inline equation"
+$$1$
+endsnippet
+
+snippet $$ "Full line equation"
+$$
+$1
+$$
+endsnippet
+
+snippet align "Create an aligned equation"
+$$
+\begin{align}
+$1
+\end{align}
+$$
+endsnippet
+
+snippet equation "Create an equation"
+$$
+$1
+$$
+endsnippet
+
+# Letters {{{
+snippet \R "Reals" Ai
+\mathbb{R}
+endsnippet
+
+snippet \E "Expected value" Ai
+\mathbb{E}_{$1}
+endsnippet
+
+snippet \I "Identity" Ai
+\mathbf{I}
+endsnippet
+#}}}
+
+# Latex help {{{
+snippet \lam "lambda" Ai
+\lambda
+endsnippet
+
+snippet \fra "Create fractions" Ai
+\frac{$1}{$2}
+endsnippet
+
+snippet \cal "Create a caligraphic character" Ai
+\mathcal{$1}
+endsnippet
+
+snippet \bb "Create a bold character" Ai
+\mathbb{$1}
+endsnippet
+
+snippet \bf "Create a bold character" Ai
+\mathbf{$1}
+endsnippet
+
+snippet \inner "Create inner product" Ai
+\langle $1,$2 \rangle
+endsnippet
+
+snippet \sum "Create a sum" Ai
+\sum_{$1}^{$2}
+endsnippet
+
+snippet \bar "Create a bar" Ai
+\bar{$1}
+endsnippet
+
+snippet \under "Create underbrace" Ai
+\underbrace{$1}_{$2}
+endsnippet
+
+snippet \sub "Create a sub expression" Ai
+_{$1}
+endsnippet
+#}}}

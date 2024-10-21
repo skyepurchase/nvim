@@ -9,9 +9,6 @@ Plug 'luochen1990/rainbow'
 Plug 'romainl/vim-cool'
 Plug 'tjvr/vim-nearley' " Highlighting Nearley.js .ne files
 
-" Using Tim
-Plug 'https://git.sr.ht/~ecc/vim-venus'
-
 " Latex
 Plug 'lervag/vimtex'
 
@@ -46,7 +43,7 @@ Plug 'jakemason/ouroboros'
 Plug 'neovimhaskell/haskell-vim'
 
 " Markdown
-Plug 'preservim/vim-markdown'
+" Plug 'preservim/vim-markdown'
 
 " Movement
 Plug 'nvim-telescope/telescope.nvim'
@@ -118,6 +115,10 @@ nnoremap <C-U> <C-U>zz
 nnoremap <C-D> <C-D>zz
 nnoremap n nzz
 nnoremap N Nzz
+nnoremap <C-H> <C-W>h
+nnoremap <C-J> <C-W>j
+nnoremap <C-K> <C-W>k
+nnoremap <C-L> <C-W>l
 
 nnoremap <CR> <cmd>noh<CR><CR>
 map <leader>wv <cmd>vsplit<CR><C-W><C-W>
@@ -128,7 +129,6 @@ map <leader>fe <cmd>Ex<CR>
 map <leader>bn <cmd>bnext<CR>
 map <leader>bp <cmd>bprev<CR>
 map <leader>bd <cmd>bdelete<CR>
-map <leader>bb <cmd>buffers<CR>:buffer<Space>
 
 " Terminal
 map <leader>t <cmd>terminal<CR>
@@ -161,8 +161,13 @@ map <leader>gj <cmd>lua vim.lsp.buf.implementation()<CR>
 map <leader>gt <cmd>lua vim.lsp.buf.type_definition()<CR>
 
 map <leader>ls <cmd>lua vim.diagnostic.open_float()<CR>
-" Can be made more specific or repeat this command for different plugins
 map <leader>la <cmd>lua vim.lsp.buf.code_action()<CR>
+
+" Snippets
+nmap <leader>se <cmd>UltiSnipsEdit<CR>
+
+" Aglaea
+" map <leader>nc :!notes create<Space>
 
 "au CursorHold <buffer> lua vim.lsp.buf.document_highlight()
 "au CursorMoved <buffer> lua vim.lsp.buf.clear_references()
@@ -191,35 +196,23 @@ let g:UltiSnipsEditSplit = 'vertical'
 " }}}
 
 " Venus {{{
-nnoremap <leader>vd :let g:pandoc_defaults_file = '~/.config/pandoc/pandoc.yaml'<CR>
-nnoremap <leader>vl :let g:pandoc_defaults_file = '~/.config/pandoc/pandoc_light.yaml'<CR>
-let g:pandoc_defaults_file = '~/.config/pandoc/pandoc.yaml'
-let g:pandoc_header_dir = '~/.config/pandoc/headers'
-let g:pandoc_options = ''
+"nnoremap <leader>vd :let g:pandoc_defaults_file = '~/.config/pandoc/pandoc.yaml'<CR>
+"nnoremap <leader>vl :let g:pandoc_defaults_file = '~/.config/pandoc/pandoc_light.yaml'<CR>
+"let g:pandoc_defaults_file = '~/.config/pandoc/pandoc.yaml'
+"let g:pandoc_header_dir = '~/.config/pandoc/headers'
+"let g:pandoc_options = ''
 " }}}
 
-" Aglaea {{{
+" Aglaea (vim markdown and note taking) {{{
 au FileType markdown set conceallevel=2
 let g:vim_markdown_conceal = 1
 let g:vim_markdown_math = 1
 
-let g:vim_markdown_follow_anchor = 1
-let g:vim_markdown_anchorexpr = "'<<'.v:anchor.'>>'"
 let g:vim_markdown_autowrite = 1
 
 let g:vim_markdown_strikethrough = 1
-
-" This is crude, what about .mark, or .markdown?
-" TODO: Capitalise headers
-au BufNewFile *.md :call Create()
-
-function! Create()
-    let filename = substitute(expand("%:t"), ".md", "", "")
-    let title = substitute(filename, "-", " ", "g")
-    if (getline("1") !~ "# ".title)
-        exe "normal!ggO# ".title
-    endif
-endfunction
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_borderless_table = 1
 " }}}
 
 " Lightline config {{{
