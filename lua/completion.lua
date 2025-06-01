@@ -49,13 +49,16 @@ cmp.setup({
                 buffer = "[Buf]",
                 nvim_lsp = "[LSP]",
                 path = "[Path]",
-                ultisnips = "[Snip]"
+                ultisnips = "[Snip]",
+                vimtex = "[Tex]"
             },
         },
     },
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         { name = 'ultisnips' },
+        { name = 'jupynium' },
+        { name = 'vimtex' },
     }, {
         { name = 'buffer' },
     }),
