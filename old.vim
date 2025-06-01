@@ -197,14 +197,14 @@ nmap <leader>se <cmd>UltiSnipsEdit<CR>
 " au VimEnter * highlight link GitGutterDeleteLineNr DiffDelete
 " set foldtext=gitgutter#fold#foldtext()
 " " }}}
-" 
-" " Snippets {{{
-" let g:UltiSnipsSnippetDirectories=["mySnippets","UltiSnips"]
-" let g:UltiSnipsExpandTrigger = '<C-e>'
-" let g:UltiSnipsJumpForwardTrigger = '<C-j>'
-" let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
-" 
-" let g:UltiSnipsEditSplit = 'vertical'
+
+" Snippets {{{
+let g:UltiSnipsSnippetDirectories=["mySnippets","UltiSnips"]
+let g:UltiSnipsExpandTrigger = '<C-e>'
+let g:UltiSnipsJumpForwardTrigger = '<C-j>'
+let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
+
+let g:UltiSnipsEditSplit = 'vertical'
 " }}}
 
 " Venus {{{
@@ -217,14 +217,14 @@ nmap <leader>se <cmd>UltiSnipsEdit<CR>
 
 " Aglaea (vim markdown and note taking) {{{
 au FileType markdown set conceallevel=2
-" let g:vim_markdown_conceal = 1
-" let g:vim_markdown_math = 1
-" 
-" let g:vim_markdown_autowrite = 1
-" 
-" let g:vim_markdown_strikethrough = 1
-" let g:vim_markdown_frontmatter = 1
-" let g:vim_markdown_borderless_table = 1
+let g:vim_markdown_conceal = 1
+let g:vim_markdown_math = 1
+
+let g:vim_markdown_autowrite = 1
+
+let g:vim_markdown_strikethrough = 1
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_borderless_table = 1
 " }}}
 
 " Lightline config {{{

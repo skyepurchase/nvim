@@ -6,11 +6,7 @@ require "plug-conf"
 -- require "telescope-conf"
 -- require "lsp-conf"
 -- require "aglea"
--- -- require "image-conf"
--- -- require "molten-conf"
--- -- require "jupytext-conf"
--- -- require "quarto-conf"
--- -- require "ts-conf"
+-- require "image-conf"
 -- require "jupynium-conf"
 
 -- source current vimscript config
