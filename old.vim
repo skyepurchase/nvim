@@ -1,72 +1,72 @@
-" Plugins {{{
-"Required
-call plug#begin('~/.config/nvim/plugged')
-" Aesthetics
-Plug 'itchyny/lightline.vim'
-Plug 'dracula/vim', { 'name': 'dracula' }
-Plug 'sheerun/vim-polyglot'
-Plug 'luochen1990/rainbow'
-Plug 'romainl/vim-cool'
-Plug 'tjvr/vim-nearley' " Highlighting Nearley.js .ne files
-
-" Latex
-Plug 'lervag/vimtex'
-Plug 'micangl/cmp-vimtex'
-
-" Snippets
-" Plug 'honza/vim-snippets'
-Plug 'SirVer/ultisnips'
-
-" Git
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
-
-" Completion
-Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/nvim-cmp'
-Plug 'quangnguyen30192/cmp-nvim-ultisnips'
-Plug 'onsails/lspkind.nvim'
-Plug 'williamboman/mason.nvim'
-Plug 'williamboman/mason-lspconfig.nvim'
-
-" Java
-Plug 'mfussenegger/nvim-dap'
-Plug 'mfussenegger/nvim-jdtls'
-
-" C
-Plug 'jakemason/ouroboros'
-
-" Haskell
-Plug 'neovimhaskell/haskell-vim'
-
-" Jupyter
-" Plug 'GCBallesteros/jupytext.nvim'
-" Plug '3rd/image.nvim'
-" Plug 'benlubas/molten-nvim'
-" Plug 'quarto-dev/quarto-nvim'
-" Plug 'jmbuhr/otter.nvim'
-" " possibly a mistake
-" Plug 'nvim-treesitter/nvim-treesitter'
-" New approach
-Plug 'kiyoon/jupynium.nvim'
-
-" Markdown
-" Plug 'preservim/vim-markdown'
-
-" Movement
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-lua/plenary.nvim'
-
-" Fun
-Plug 'ThePrimeagen/vim-be-good'
-
-" Required
-call plug#end()
-" }}}
+" " Plugins {{{
+" "Required
+" call plug#begin('~/.config/nvim/plugged')
+" " Aesthetics
+" Plug 'itchyny/lightline.vim'
+" Plug 'dracula/vim', { 'name': 'dracula' }
+" Plug 'sheerun/vim-polyglot'
+" Plug 'luochen1990/rainbow'
+" Plug 'romainl/vim-cool'
+" Plug 'tjvr/vim-nearley' " Highlighting Nearley.js .ne files
+" 
+" " Latex
+" Plug 'lervag/vimtex'
+" Plug 'micangl/cmp-vimtex'
+" 
+" " Snippets
+" " Plug 'honza/vim-snippets'
+" Plug 'SirVer/ultisnips'
+" 
+" " Git
+" Plug 'airblade/vim-gitgutter'
+" Plug 'tpope/vim-fugitive'
+" 
+" " Completion
+" Plug 'neovim/nvim-lspconfig'
+" Plug 'hrsh7th/cmp-nvim-lsp'
+" Plug 'hrsh7th/cmp-buffer'
+" Plug 'hrsh7th/cmp-path'
+" Plug 'hrsh7th/cmp-cmdline'
+" Plug 'hrsh7th/nvim-cmp'
+" Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+" Plug 'onsails/lspkind.nvim'
+" Plug 'williamboman/mason.nvim'
+" Plug 'williamboman/mason-lspconfig.nvim'
+" 
+" " Java
+" Plug 'mfussenegger/nvim-dap'
+" Plug 'mfussenegger/nvim-jdtls'
+" 
+" " C
+" Plug 'jakemason/ouroboros'
+" 
+" " Haskell
+" Plug 'neovimhaskell/haskell-vim'
+" 
+" " Jupyter
+" " Plug 'GCBallesteros/jupytext.nvim'
+" " Plug '3rd/image.nvim'
+" " Plug 'benlubas/molten-nvim'
+" " Plug 'quarto-dev/quarto-nvim'
+" " Plug 'jmbuhr/otter.nvim'
+" " " possibly a mistake
+" " Plug 'nvim-treesitter/nvim-treesitter'
+" " New approach
+" Plug 'kiyoon/jupynium.nvim'
+" 
+" " Markdown
+" " Plug 'preservim/vim-markdown'
+" 
+" " Movement
+" Plug 'nvim-telescope/telescope.nvim'
+" Plug 'nvim-lua/plenary.nvim'
+" 
+" " Fun
+" Plug 'ThePrimeagen/vim-be-good'
+" 
+" " Required
+" call plug#end()
+" " }}}
 
 " General {{{
 set exrc
@@ -186,25 +186,25 @@ nmap <leader>se <cmd>UltiSnipsEdit<CR>
 " }}}
 
 " Git Gutter {{{
-let g:gitgutter_sign_added = '|'
-let g:gitgutter_sign_modified = '|'
-let g:gitgutter_sign_removed = '|'
-let g:gitgutter_sign_modified = '|'
-let g:gitgutter_sign_modified_removed = '|'
-au VimEnter * GitGutterLineNrHighlightsEnable
-au VimEnter * highlight link GitGutterAddLineNr DiffAdd
-au VimEnter * highlight link GitGutterChangeLineNr DiffChange
-au VimEnter * highlight link GitGutterDeleteLineNr DiffDelete
-set foldtext=gitgutter#fold#foldtext()
-" }}}
-
-" Snippets {{{
-let g:UltiSnipsSnippetDirectories=["mySnippets","UltiSnips"]
-let g:UltiSnipsExpandTrigger = '<C-e>'
-let g:UltiSnipsJumpForwardTrigger = '<C-j>'
-let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
-
-let g:UltiSnipsEditSplit = 'vertical'
+" let g:gitgutter_sign_added = '|'
+" let g:gitgutter_sign_modified = '|'
+" let g:gitgutter_sign_removed = '|'
+" let g:gitgutter_sign_modified = '|'
+" let g:gitgutter_sign_modified_removed = '|'
+" au VimEnter * GitGutterLineNrHighlightsEnable
+" au VimEnter * highlight link GitGutterAddLineNr DiffAdd
+" au VimEnter * highlight link GitGutterChangeLineNr DiffChange
+" au VimEnter * highlight link GitGutterDeleteLineNr DiffDelete
+" set foldtext=gitgutter#fold#foldtext()
+" " }}}
+" 
+" " Snippets {{{
+" let g:UltiSnipsSnippetDirectories=["mySnippets","UltiSnips"]
+" let g:UltiSnipsExpandTrigger = '<C-e>'
+" let g:UltiSnipsJumpForwardTrigger = '<C-j>'
+" let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
+" 
+" let g:UltiSnipsEditSplit = 'vertical'
 " }}}
 
 " Venus {{{
@@ -217,40 +217,40 @@ let g:UltiSnipsEditSplit = 'vertical'
 
 " Aglaea (vim markdown and note taking) {{{
 au FileType markdown set conceallevel=2
-let g:vim_markdown_conceal = 1
-let g:vim_markdown_math = 1
-
-let g:vim_markdown_autowrite = 1
-
-let g:vim_markdown_strikethrough = 1
-let g:vim_markdown_frontmatter = 1
-let g:vim_markdown_borderless_table = 1
+" let g:vim_markdown_conceal = 1
+" let g:vim_markdown_math = 1
+" 
+" let g:vim_markdown_autowrite = 1
+" 
+" let g:vim_markdown_strikethrough = 1
+" let g:vim_markdown_frontmatter = 1
+" let g:vim_markdown_borderless_table = 1
 " }}}
 
 " Lightline config {{{
 set laststatus=2
 set noshowmode
-let g:lightline = {                                                                                
-  \   'colorscheme': 'default',                                                                    
-  \   'active': {                                                                                  
-  \     'left':[ [ 'mode', 'paste' ],                                                              
-  \              [ 'gitbranch', 'readonly', 'filename', 'modified' ]                               
-  \     ]                                                                                          
-  \   },                                                                                           
-  \   'component': {                                                                             
-  \     'lineinfo': '%3l:%-2v',                                                                  
-  \   },                                                                                         
-  \   'component_function': {                                                                      
-  \     'gitbranch': 'FugitiveHead',                                                              
-  \   }                                                                                            
-  \ }                                                                                              
-let g:lightline.separator = {                                                                      
-  \   'left': "\ue0b0", 'right': "\ue0b2"                                                        
-  \}                                                                                               
-let g:lightline.subseparator = {                                                                   
-  \   'left': "\ue0b1", 'right': "\ue0b3"                                                        
-  \}
-" }}}
+" let g:lightline = {                                                                                
+"   \   'colorscheme': 'default',                                                                    
+"   \   'active': {                                                                                  
+"   \     'left':[ [ 'mode', 'paste' ],                                                              
+"   \              [ 'gitbranch', 'readonly', 'filename', 'modified' ]                               
+"   \     ]                                                                                          
+"   \   },                                                                                           
+"   \   'component': {                                                                             
+"   \     'lineinfo': '%3l:%-2v',                                                                  
+"   \   },                                                                                         
+"   \   'component_function': {                                                                      
+"   \     'gitbranch': 'FugitiveHead',                                                              
+"   \   }                                                                                            
+"   \ }                                                                                              
+" let g:lightline.separator = {                                                                      
+"   \   'left': "\ue0b0", 'right': "\ue0b2"                                                        
+"   \}                                                                                               
+" let g:lightline.subseparator = {                                                                   
+"   \   'left': "\ue0b1", 'right': "\ue0b3"                                                        
+"   \}
+" " }}}
 
 " Dracula {{{
 colorscheme dracula
