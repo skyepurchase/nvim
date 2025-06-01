@@ -11,6 +11,7 @@ Plug 'tjvr/vim-nearley' " Highlighting Nearley.js .ne files
 
 " Latex
 Plug 'lervag/vimtex'
+Plug 'micangl/cmp-vimtex'
 
 " Snippets
 " Plug 'honza/vim-snippets'
@@ -36,11 +37,22 @@ Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'mfussenegger/nvim-dap'
 Plug 'mfussenegger/nvim-jdtls'
 
-" C 
+" C
 Plug 'jakemason/ouroboros'
 
 " Haskell
 Plug 'neovimhaskell/haskell-vim'
+
+" Jupyter
+" Plug 'GCBallesteros/jupytext.nvim'
+" Plug '3rd/image.nvim'
+" Plug 'benlubas/molten-nvim'
+" Plug 'quarto-dev/quarto-nvim'
+" Plug 'jmbuhr/otter.nvim'
+" " possibly a mistake
+" Plug 'nvim-treesitter/nvim-treesitter'
+" New approach
+Plug 'kiyoon/jupynium.nvim'
 
 " Markdown
 " Plug 'preservim/vim-markdown'
