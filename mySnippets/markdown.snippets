@@ -44,7 +44,11 @@ snippet \R "Reals" Ai
 endsnippet
 
 snippet \E "Expected value" Ai
-\mathbb{E}_{$1}
+\mathbb{E}_{$1}\left[$2\right]
+endsnippet
+
+snippet \N "Normal distribution" Ai
+\mathcal{N}\left($1, $2\right)
 endsnippet
 
 snippet \I "Identity" Ai
@@ -81,15 +85,75 @@ snippet \sum "Create a sum" Ai
 \sum_{$1}^{$2}
 endsnippet
 
+snippet \prod "Create a sum" Ai
+\prod_{$1}^{$2}
+endsnippet
+
+snippet \int "Create an integral" Ai
+\int_{$1}^{$2}
+endsnippet
+
+snippet \grad "Create a gradient" Ai
+\nabla_{$1}
+endsnippet
+
 snippet \bar "Create a bar" Ai
 \bar{$1}
+endsnippet
+
+snippet \Bar "Create a long bar" Ai
+\overline{$1}
+endsnippet
+
+snippet \hat "Create a hat" Ai
+\hat{$1}
+endsnippet
+
+snippet \Hat "Create a large hat" Ai
+\widehat{$1}
 endsnippet
 
 snippet \under "Create underbrace" Ai
 \underbrace{$1}_{$2}
 endsnippet
 
-snippet \sub "Create a sub expression" Ai
-_{$1}
+snippet \tick "Create a tick" Ai
+^\prime
+endsnippet
+
+snippet \mat "Create a matrix" Ai
+\begin{bmatrix}$1\end{bmatrix}
+endsnippet
+
+snippet \tex "Create a text box" Ai
+\text{$1}
+endsnippet
+
+snippet ( "Bracket" Ai
+($1)
+endsnippet
+
+snippet { "Latex bracket" Ai
+{$1}
+endsnippet
+
+snippet \sqr "Square Root" Ai
+\sqrt{$1}
+endsnippet
+
+snippet \over "Place symbols above another" Ai
+\stackrel{$1}{$2}
+endsnippet
+
+snippet \left "Surrounding parantheses/braces" Ai
+\left$1\right$2
+endsnippet
+
+snippet \half "A half you know" Ai
+\frac12
+endsnippet
+
+snippet \def "Function definition" Ai
+\triangleq
 endsnippet
 #}}}
