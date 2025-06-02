@@ -1,4 +1,4 @@
--- lsp-spec.lua
+-- lua/plugins/lsp.lua
 
 -- Lazy.nvim lsp plugins
 
