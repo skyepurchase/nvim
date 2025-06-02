@@ -1,6 +1,5 @@
 -- lazy.lua
 
--- bootstrap plug
 local lazy_path = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.uv.fs_stat(lazy_path) then
     local lazy_repo = "https://github.com/folke/lazy.nvim.git"
