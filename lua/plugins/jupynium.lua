@@ -1,4 +1,4 @@
--- jupynium.lua
+-- lua/plugins/jupynium.lua
 
 return {
     "kiyoon/jupynium.nvim",
@@ -47,10 +47,9 @@ return {
         shortsighted = false,
         kernel_hover = {
             floating_win_opts = {
-                  max_width = 84,
-                  border = "none",
+                max_width = 84,
+                border = "none",
             },
         },
     }
 }
-

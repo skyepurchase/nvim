@@ -1,5 +1,6 @@
 -- lua/plugins/vimtex.lua
 
 return {
-    "lervag/vimtex", lazy = false
+    { "lervag/vimtex",     lazy = false },
+    { "micangl/cmp-vimtex" }
 }
