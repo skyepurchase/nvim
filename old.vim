@@ -1,73 +1,3 @@
-" " Plugins {{{
-" "Required
-" call plug#begin('~/.config/nvim/plugged')
-" " Aesthetics
-" Plug 'itchyny/lightline.vim'
-" Plug 'dracula/vim', { 'name': 'dracula' }
-" Plug 'sheerun/vim-polyglot'
-" Plug 'luochen1990/rainbow'
-" Plug 'romainl/vim-cool'
-" Plug 'tjvr/vim-nearley' " Highlighting Nearley.js .ne files
-" 
-" " Latex
-" Plug 'lervag/vimtex'
-" Plug 'micangl/cmp-vimtex'
-" 
-" " Snippets
-" " Plug 'honza/vim-snippets'
-" Plug 'SirVer/ultisnips'
-" 
-" " Git
-" Plug 'airblade/vim-gitgutter'
-" Plug 'tpope/vim-fugitive'
-" 
-" " Completion
-" Plug 'neovim/nvim-lspconfig'
-" Plug 'hrsh7th/cmp-nvim-lsp'
-" Plug 'hrsh7th/cmp-buffer'
-" Plug 'hrsh7th/cmp-path'
-" Plug 'hrsh7th/cmp-cmdline'
-" Plug 'hrsh7th/nvim-cmp'
-" Plug 'quangnguyen30192/cmp-nvim-ultisnips'
-" Plug 'onsails/lspkind.nvim'
-" Plug 'williamboman/mason.nvim'
-" Plug 'williamboman/mason-lspconfig.nvim'
-" 
-" " Java
-" Plug 'mfussenegger/nvim-dap'
-" Plug 'mfussenegger/nvim-jdtls'
-" 
-" " C
-" Plug 'jakemason/ouroboros'
-" 
-" " Haskell
-" Plug 'neovimhaskell/haskell-vim'
-" 
-" " Jupyter
-" " Plug 'GCBallesteros/jupytext.nvim'
-" " Plug '3rd/image.nvim'
-" " Plug 'benlubas/molten-nvim'
-" " Plug 'quarto-dev/quarto-nvim'
-" " Plug 'jmbuhr/otter.nvim'
-" " " possibly a mistake
-" " Plug 'nvim-treesitter/nvim-treesitter'
-" " New approach
-" Plug 'kiyoon/jupynium.nvim'
-" 
-" " Markdown
-" " Plug 'preservim/vim-markdown'
-" 
-" " Movement
-" Plug 'nvim-telescope/telescope.nvim'
-" Plug 'nvim-lua/plenary.nvim'
-" 
-" " Fun
-" Plug 'ThePrimeagen/vim-be-good'
-" 
-" " Required
-" call plug#end()
-" " }}}
-
 " General {{{
 set exrc
 set secure
@@ -77,6 +7,7 @@ syntax enable
 highlight Normal ctermbg=NONE
 highlight Normal guibg=NONE
 set termguicolors
+colorscheme dracula
 
 " Formatting
 set shiftwidth=4 smarttab
@@ -205,17 +136,17 @@ vmap iJ <cmd>lua require'jupynium.textobj'.select_cell(false, true)<CR>
 " }}}
 
 " Git Gutter {{{
-" let g:gitgutter_sign_added = '|'
-" let g:gitgutter_sign_modified = '|'
-" let g:gitgutter_sign_removed = '|'
-" let g:gitgutter_sign_modified = '|'
-" let g:gitgutter_sign_modified_removed = '|'
-" au VimEnter * GitGutterLineNrHighlightsEnable
-" au VimEnter * highlight link GitGutterAddLineNr DiffAdd
-" au VimEnter * highlight link GitGutterChangeLineNr DiffChange
-" au VimEnter * highlight link GitGutterDeleteLineNr DiffDelete
-" set foldtext=gitgutter#fold#foldtext()
-" " }}}
+let g:gitgutter_sign_added = '|'
+let g:gitgutter_sign_modified = '|'
+let g:gitgutter_sign_removed = '|'
+let g:gitgutter_sign_modified = '|'
+let g:gitgutter_sign_modified_removed = '|'
+au VimEnter * GitGutterLineNrHighlightsEnable
+au VimEnter * highlight link GitGutterAddLineNr DiffAdd
+au VimEnter * highlight link GitGutterChangeLineNr DiffChange
+au VimEnter * highlight link GitGutterDeleteLineNr DiffDelete
+set foldtext=gitgutter#fold#foldtext()
+" }}}
 
 " Snippets {{{
 let g:UltiSnipsSnippetDirectories=["mySnippets","UltiSnips"]
@@ -277,11 +208,3 @@ set noshowmode
 "   \   'left': "\ue0b1", 'right': "\ue0b3"                                                        
 "   \}
 " " }}}
-
-" Dracula {{{
-colorscheme dracula
-" }}}
-
-" Rainbow Parentheses {{{
-let g:rainbow_active = 1
-" }}}
