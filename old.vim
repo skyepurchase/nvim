@@ -178,6 +178,25 @@ map <leader>la <cmd>lua vim.lsp.buf.code_action()<CR>
 " Snippets
 nmap <leader>se <cmd>UltiSnipsEdit<CR>
 
+" Jupyter
+" Improved keybindings (whichkey is becoming more of a necessity)
+map <leader>jr <cmd>JupyniumExecuteSelectedCells<CR>
+map <leader>jc <cmd>JupyniumClearSelectedCellsOutputs<CR>
+map <leader>jh <cmd>JupyniumKernelHover<CR>
+
+map <leader>jd <cmd>JupyniumStopSync<CR>
+map <leader>js <cmd>JupyniumStartSync<CR>
+map <leader>ja <cmd>JupyniumStartAndAttachToServer<CR>
+
+map <silent> <leader>jk :lua require('jupynium.textobj').goto_previous_cell_separator()<CR>
+map <silent> <leader>jj :lua require('jupynium.textobj').goto_next_cell_separator()<CR>
+map <silent> <leader>jg :lua require('jupynium.textobj').goto_current_cell_separator()<CR>
+
+vmap aj <cmd>lua require'jupynium.textobj'.select_cell(true, false)<CR>
+vmap ij <cmd>lua require'jupynium.textobj'.select_cell(false, false)<CR>
+vmap aJ <cmd>lua require'jupynium.textobj'.select_cell(true, true)<CR>
+vmap iJ <cmd>lua require'jupynium.textobj'.select_cell(false, true)<CR>
+
 " Aglaea
 " map <leader>nc :!notes create<Space>
 
@@ -205,6 +224,13 @@ let g:UltiSnipsJumpForwardTrigger = '<C-j>'
 let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
 
 let g:UltiSnipsEditSplit = 'vertical'
+" }}}
+
+" Jupyter {{{
+hi! link JupyniumCodeCellSeparator CursorLine
+hi! link JupyniumMarkdownCellSeparator CursorLine
+hi! link JupyniumMarkdownCellContent CursorLine
+hi! link JupyniumMagicCommand Keyword
 " }}}
 
 " Venus {{{
