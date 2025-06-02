@@ -149,7 +149,7 @@ set foldtext=gitgutter#fold#foldtext()
 " }}}
 
 " Snippets {{{
-let g:UltiSnipsSnippetDirectories=["mySnippets","UltiSnips"]
+let g:UltiSnipsSnippetDirectories=["mySnippets",$HOME."/.config/nvim/mySnippets"]
 let g:UltiSnipsExpandTrigger = '<C-e>'
 let g:UltiSnipsJumpForwardTrigger = '<C-j>'
 let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
