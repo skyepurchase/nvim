@@ -3,24 +3,20 @@
 -- Lazy.nvim completion plugins
 
 return {
-    { "L3MON4D3/LuaSnip", enabled = false },
-    { "SirVer/ultisnips", event = "InsertEnter" },
+    { "L3MON4D3/LuaSnip",         enabled = false },
+    { "saadparwaizi/cmp_luasnip", enabled = false },
     {
         "hrsh7th/nvim-cmp",
         event = "InsertEnter",
+        lazy = false,
+        priority = 100,
         dependencies = {
             "hrsh7th/cmp-buffer",
             "hrsh7th/cmp-path",
-            {
-                "quangnguyen30192/cmp-nvim-ultisnips",
-                config = function()
-                    require("cmp_nvim_ultisnips").setup {}
-                end
-            },
+            "SirVer/ultisnips",
+            "quangnguyen30192/cmp-nvim-ultisnips",
             "onsails/lspkind.nvim",
-            { "saadparwaizi/cmp_luasnip", enabled = false }
         },
-        after = "SirVer/ultisnips",
         config = function()
             local cmp = require("cmp")
             local lspkind = require("lspkind")
@@ -67,11 +63,11 @@ return {
                         mode = 'symbol',
                         with_text = true,
                         menu = {
-                            buffer = "[Buf]",
-                            nvim_lsp = "[LSP]",
-                            path = "[Path]",
-                            ultisnips = "[Snip]",
-                            vimtex = "[Tex]"
+                            buffer = "[buf]",
+                            nvim_lsp = "[lsp]",
+                            path = "[path]",
+                            ultisnips = "[snip]",
+                            vimtex = "[tex]"
                         },
                     },
                 },
