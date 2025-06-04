@@ -45,14 +45,15 @@ whichkey.add({
     -- Git
     { "<leader>g",   group = "Git" },
     { "<leader>gb",  telescope_builtin.git_branches,             desc = "Git branches" },
+    { "<leader>gc",  "<cmd>Git commit<CR>",                      desc = "Git branches" },
     { "<leader>gp",  "<cmd>Git push<CR>",                        desc = "Git push" },
     { "<leader>gs",  "<cmd>Git<CR>",                             desc = "Git status" },
     { "<leader>gz",  "<cmd>Git blame<CR>",                       desc = "Git blame" },
 
-    { "<leader>gc",  group = "Commit history" },
-    { "<leader>gcb", telescope_builtin.git_bcommits,             desc = "Buffer commits" },
-    { "<leader>gcc", telescope_builtin.git_commits,              desc = "Git commits" },
-    { "<leader>gcs", telescope_builtin.git_stash,                desc = "Git stash" },
+    { "<leader>gl",  group = "Commit (log) history" },
+    { "<leader>glb", telescope_builtin.git_bcommits,             desc = "Buffer commits" },
+    { "<leader>glc", telescope_builtin.git_commits,              desc = "Git commits" },
+    { "<leader>gls", telescope_builtin.git_stash,                desc = "Git stash" },
 
     { "<leader>gh",  group = "Git signs" },
     { "<leader>ghu", "<Plug>(GitGutterUndoHunk)",                desc = "Reset hunk" },
