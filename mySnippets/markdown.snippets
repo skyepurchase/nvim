@@ -1,9 +1,13 @@
-snippet [[ "Create document link"
+snippet doc "Create document link"
 [[${1:${VISUAL}}]]
 endsnippet
 
-snippet ## "Create header link"
+snippet header "Create header link"
 [[#${1:${VISUAL}}]]
+endsnippet
+
+snippet url "Create a url ink"
+[$1](${2:${VISUAL}})
 endsnippet
 
 snippet _ "Italicise"
@@ -26,9 +30,9 @@ endsnippet
 
 snippet align "Create an aligned equation"
 $$
-\begin{align}
+\begin{aligned}
 $1
-\end{align}
+\end{aligned}
 $$
 endsnippet
 
@@ -127,10 +131,6 @@ endsnippet
 
 snippet \tex "Create a text box" Ai
 \text{$1}
-endsnippet
-
-snippet ( "Bracket" Ai
-($1)
 endsnippet
 
 snippet { "Latex bracket" Ai
