@@ -34,7 +34,7 @@ whichkey.add({
 
     -- Telescope
     { "<leader>f",   group = "Files" },
-    { "{<leader>fe",  ":Ex<CR>",                                  desc = "File explorer" },
+    { "<leader>fe",  ":Ex<CR>",                                  desc = "File explorer" },
     { "<leader>ff",  telescope_builtin.find_files,               desc = "Find files" },
     { "<leader>fg",  telescope_builtin.live_grep,                desc = "Grep in all files" },
     { "<leader>fb",  telescope_builtin.buffers,                  desc = "Buffer files" },
