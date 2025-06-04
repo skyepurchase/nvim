@@ -63,74 +63,6 @@ nnoremap <C-J> <C-W>j
 nnoremap <C-K> <C-W>k
 nnoremap <C-L> <C-W>l
 
-nnoremap <CR> <cmd>noh<CR><CR>
-map <leader>wv <cmd>vsplit<CR><C-W><C-W>
-map <leader>wh <cmd>split<CR><C-W><C-W>
-map <leader>fe <cmd>Ex<CR>
-
-" Buffers
-map <leader>bn <cmd>bnext<CR>
-map <leader>bp <cmd>bprev<CR>
-map <leader>bd <cmd>bdelete<CR>
-
-" Terminal
-map <leader>t <cmd>terminal<CR>
-
-" Ouroboros
-autocmd! Filetype c,cpp map <leader>s :Ouroboros<CR>
-
-" Terminal
-map <leader>t <cmd>terminal<CR>
-tnoremap <Esc> <C-\><C-n>
-
-" Telescope find files command-line sugar.
-map <leader>ff <cmd>Telescope find_files<CR>
-map <leader>fg <cmd>Telescope live_grep<CR>
-map <leader>fb <cmd>Telescope buffers<CR>
-map <leader>fh <cmd>Telescope help_tags<CR>
-
-" Git Gutter
-nmap <leader>hn <Plug>(GitGutterNextHunk)
-nmap <leader>hp <Plug>(GitGutterPrevHunk)
-nmap <leader>hh <Plug>(GitGutterPreviewHunk)
-
-" LSP things
-map <leader>gd <cmd>lua vim.lsp.buf.definition()<CR>
-map <leader>gu <cmd>lua vim.lsp.buf.references()<CR>
-map <leader>gr <cmd>lua vim.lsp.buf.rename()<CR>
-
-map <leader>gn <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
-map <leader>gj <cmd>lua vim.lsp.buf.implementation()<CR>
-map <leader>gt <cmd>lua vim.lsp.buf.type_definition()<CR>
-
-map <leader>ls <cmd>lua vim.diagnostic.open_float()<CR>
-map <leader>la <cmd>lua vim.lsp.buf.code_action()<CR>
-
-" Snippets
-nmap <leader>se <cmd>UltiSnipsEdit<CR>
-
-" Jupyter
-" Improved keybindings (whichkey is becoming more of a necessity)
-map <leader>jr <cmd>JupyniumExecuteSelectedCells<CR>
-map <leader>jc <cmd>JupyniumClearSelectedCellsOutputs<CR>
-map <leader>jh <cmd>JupyniumKernelHover<CR>
-
-map <leader>jd <cmd>JupyniumStopSync<CR>
-map <leader>js <cmd>JupyniumStartSync<CR>
-map <leader>ja <cmd>JupyniumStartAndAttachToServer<CR>
-
-map <silent> <leader>jk :lua require('jupynium.textobj').goto_previous_cell_separator()<CR>
-map <silent> <leader>jj :lua require('jupynium.textobj').goto_next_cell_separator()<CR>
-map <silent> <leader>jg :lua require('jupynium.textobj').goto_current_cell_separator()<CR>
-
-vmap aj <cmd>lua require'jupynium.textobj'.select_cell(true, false)<CR>
-vmap ij <cmd>lua require'jupynium.textobj'.select_cell(false, false)<CR>
-vmap aJ <cmd>lua require'jupynium.textobj'.select_cell(true, true)<CR>
-vmap iJ <cmd>lua require'jupynium.textobj'.select_cell(false, true)<CR>
-
-" Aglaea
-" map <leader>nc :!notes create<Space>
-
 "au CursorHold <buffer> lua vim.lsp.buf.document_highlight()
 "au CursorMoved <buffer> lua vim.lsp.buf.clear_references()
 " }}}
@@ -164,14 +96,6 @@ hi! link JupyniumMarkdownCellContent CursorLine
 hi! link JupyniumMagicCommand Keyword
 " }}}
 
-" Venus {{{
-"nnoremap <leader>vd :let g:pandoc_defaults_file = '~/.config/pandoc/pandoc.yaml'<CR>
-"nnoremap <leader>vl :let g:pandoc_defaults_file = '~/.config/pandoc/pandoc_light.yaml'<CR>
-"let g:pandoc_defaults_file = '~/.config/pandoc/pandoc.yaml'
-"let g:pandoc_header_dir = '~/.config/pandoc/headers'
-"let g:pandoc_options = ''
-" }}}
-
 " Aglaea (vim markdown and note taking) {{{
 au FileType markdown set conceallevel=2
 let g:vim_markdown_conceal = 1
@@ -183,28 +107,3 @@ let g:vim_markdown_strikethrough = 1
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_borderless_table = 1
 " }}}
-
-" Lightline config {{{
-set laststatus=2
-set noshowmode
-" let g:lightline = {                                                                                
-"   \   'colorscheme': 'default',                                                                    
-"   \   'active': {                                                                                  
-"   \     'left':[ [ 'mode', 'paste' ],                                                              
-"   \              [ 'gitbranch', 'readonly', 'filename', 'modified' ]                               
-"   \     ]                                                                                          
-"   \   },                                                                                           
-"   \   'component': {                                                                             
-"   \     'lineinfo': '%3l:%-2v',                                                                  
-"   \   },                                                                                         
-"   \   'component_function': {                                                                      
-"   \     'gitbranch': 'FugitiveHead',                                                              
-"   \   }                                                                                            
-"   \ }                                                                                              
-" let g:lightline.separator = {                                                                      
-"   \   'left': "\ue0b0", 'right': "\ue0b2"                                                        
-"   \}                                                                                               
-" let g:lightline.subseparator = {                                                                   
-"   \   'left': "\ue0b1", 'right': "\ue0b3"                                                        
-"   \}
-" " }}}
