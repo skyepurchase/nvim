@@ -89,4 +89,14 @@ whichkey.add({
     { "<leader>cc",  "<plug>(vimtex-env-change)",                desc = "Change surrounding command" },
     { "<leader>cm",  "<plug>(vimtex-env-change-math)",           desc = "Change surrounding math environment" },
     { "<leader>cd",  "<plug>(vimtex-delim-change)",              desc = "Change surrounding math environment" },
+
+    -- Copilot
+    {
+        "<C-c>",
+        "copilot#Accept('<CR>')",
+        mode = "i",
+        expr = true,
+        silent = true,
+        desc = "Accept Copilot suggestion"
+    },
 })
