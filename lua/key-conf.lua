@@ -14,14 +14,14 @@ whichkey.add({
     { "<leader>lj",  vim.lsp.buf.implementation(),               desc = "Go to implementation" },
     { "<leader>lt",  vim.lsp.buf.type_definition(),              desc = "Go to type definition" },
     { "<leader>la",  vim.lsp.buf.code_action(),                  desc = "Show code actions" },
-    { "<leader>ln",  vim.diagnostic.goto_next(),                 desc = "Go to next diagnostic",          silent = true },
-    { "<leader>lp",  vim.diagnostic.goto_prev(),                 desc = "Go to previous diagnostic",      silent = true },
-    { "<leader>ls",  vim.diagnostic.open_float(),                desc = "Show diagnostic",                silent = true },
+    { "<leader>ln",  vim.diagnostic.goto_next(),                 desc = "Go to next diagnostic",              silent = true },
+    { "<leader>lp",  vim.diagnostic.goto_prev(),                 desc = "Go to previous diagnostic",          silent = true },
+    { "<leader>ls",  vim.diagnostic.open_float(),                desc = "Show diagnostic",                    silent = true },
 
     -- Buffers
     { "<leader>b",   group = "Buffers" },
     { "<leader>bn",  ":bnext<CR>",                               desc = "Go to next buffer" },
-    { "<leader>bb",  ":bprev<CR>",                               desc = "Go to previous buffer" },
+    { "<leader>bp",  ":bprev<CR>",                               desc = "Go to previous buffer" },
     { "<leader>bd",  ":bdelete<CR>",                             desc = "Delete current buffer" },
 
     -- Windows
@@ -55,12 +55,12 @@ whichkey.add({
     { "<leader>glc", telescope_builtin.git_commits,              desc = "Git commits" },
     { "<leader>gls", telescope_builtin.git_stash,                desc = "Git stash" },
 
-    { "<leader>gh",  group = "Git signs" },
+    { "<leader>gh",  group = "Git hunks" },
     { "<leader>ghu", "<Plug>(GitGutterUndoHunk)",                desc = "Reset hunk" },
-    { "<leader>ghs", "<Plug>(GitGutterStageHunk)",               desc = "Stage hunk" },
+    { "<leader>ghS", "<Plug>(GitGutterStageHunk)",               desc = "Stage hunk" },
     { "<leader>ghn", "<Plug>(GitGutterNextHunk)",                desc = "Next hunk" },
-    { "<leader>ghb", "<Plug>(GitGutterPrevHunk)",                desc = "Previous hunk" },
-    { "<leader>ghp", "<Plug>(GitGutterPreviewHunk)",             desc = "Preview hunk" },
+    { "<leader>ghp", "<Plug>(GitGutterPrevHunk)",                desc = "Previous hunk" },
+    { "<leader>ghs", "<Plug>(GitGutterPreviewHunk)",             desc = "Preview hunk" },
 
     -- Jupyter Notebooks
     { "<leader>j",   group = "Jupyter" },
@@ -71,12 +71,33 @@ whichkey.add({
     { "<leader>js",  ":JupyniumStartSync<CR>",                   desc = "Start syncing" },
     { "<leader>ja",  ":JupyniumStartAndAttachToServer<CR>",      desc = "Start server and attach" },
 
-    { "<leader>jk",  jup_textobj.goto_previous_cell_separator(), desc = "Go to previous cell",            silent = true },
-    { "<leader>jj",  jup_textobj.goto_next_cell_separator(),     desc = "Go to next cell",                silent = true },
-    { "<leader>jg",  jup_textobj.goto_current_cell_separator(),  desc = "Go to top of cell",              silent = true },
+    { "<leader>jk",  jup_textobj.goto_previous_cell_separator(), desc = "Go to previous cell",                silent = true },
+    { "<leader>jj",  jup_textobj.goto_next_cell_separator(),     desc = "Go to next cell",                    silent = true },
+    { "<leader>jg",  jup_textobj.goto_current_cell_separator(),  desc = "Go to top of cell",                  silent = true },
 
-    { "aj",          jup_textobj.select_cell(true, false),       desc = "Select around cell",             mode = "v" },
-    { "ij",          jup_textobj.select_cell(false, false),      desc = "Select inside cell",             mode = "v" },
-    { "aJ",          jup_textobj.select_cell(true, true),        desc = "Select surrounding cell",        mode = "v" },
-    { "iJ",          jup_textobj.select_cell(false, true),       desc = "Select inside surrounding cell", mode = "v" },
+    { "aj",          jup_textobj.select_cell(true, false),       desc = "Select around cell",                 mode = "v" },
+    { "ij",          jup_textobj.select_cell(false, false),      desc = "Select inside cell",                 mode = "v" },
+    { "aJ",          jup_textobj.select_cell(true, true),        desc = "Select surrounding cell",            mode = "v" },
+    { "iJ",          jup_textobj.select_cell(false, true),       desc = "Select inside surrounding cell",     mode = "v" },
+
+    -- Vimtex
+    { "<leader>v",   group = "Vimtex" },
+    { "<leader>vc",  "<plug>(vimtex-compile)",                   desc = "Start continuous latex compilation" },
+    { "<leader>vx",  "<plug>(vimtex-clean-full)",                desc = "Clean the latex files" },
+
+    { "<leader>vs",  "<plug>(vimtex-toggle-main)" },
+    { "<leader>va",  "<plug>(vimtex-context-menu)" },
+    { "<leader>vt",  "<plug>(vimtex-toc-open)" },
+
+    { "<leader>vd",  group = "Vimtex delete" },
+    { "<leader>vde", "<plug>(vimtex-env-delete)",                desc = "Delete surrounding environment" },
+    { "<leader>vdc", "<plug>(vimtex-env-delete)",                desc = "Delete surrounding command" },
+    { "<leader>vdm", "<plug>(vimtex-env-delete-math)",           desc = "Delete surrounding math environment" },
+    { "<leader>vdd", "<plug>(vimtex-delim-delete)",              desc = "Delete surrounding delimiters" },
+
+    { "<leader>vc",  group = "Vimtex change" },
+    { "<leader>vce", "<plug>(vimtex-env-change)",                desc = "Change surrounding environment" },
+    { "<leader>vcc", "<plug>(vimtex-env-change)",                desc = "Change surrounding command" },
+    { "<leader>vcm", "<plug>(vimtex-env-change-math)",           desc = "Change surrounding math environment" },
+    { "<leader>vcd", "<plug>(vimtex-delim-change)",              desc = "Change surrounding math environment" },
 })
