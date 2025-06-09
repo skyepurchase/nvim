@@ -89,15 +89,9 @@ whichkey.add({
     { "<leader>va",  "<plug>(vimtex-context-menu)" },
     { "<leader>vt",  "<plug>(vimtex-toc-open)" },
 
-    { "<leader>vd",  group = "Vimtex delete" },
-    { "<leader>vde", "<plug>(vimtex-env-delete)",                desc = "Delete surrounding environment" },
-    { "<leader>vdc", "<plug>(vimtex-env-delete)",                desc = "Delete surrounding command" },
-    { "<leader>vdm", "<plug>(vimtex-env-delete-math)",           desc = "Delete surrounding math environment" },
-    { "<leader>vdd", "<plug>(vimtex-delim-delete)",              desc = "Delete surrounding delimiters" },
-
-    { "<leader>vc",  group = "Vimtex change" },
-    { "<leader>vce", "<plug>(vimtex-env-change)",                desc = "Change surrounding environment" },
-    { "<leader>vcc", "<plug>(vimtex-env-change)",                desc = "Change surrounding command" },
-    { "<leader>vcm", "<plug>(vimtex-env-change-math)",           desc = "Change surrounding math environment" },
-    { "<leader>vcd", "<plug>(vimtex-delim-change)",              desc = "Change surrounding math environment" },
+    { "<leader>c",   group = "Vimtex change" },
+    { "<leader>ce",  "<plug>(vimtex-env-change)",                desc = "Change surrounding environment" },
+    { "<leader>cc",  "<plug>(vimtex-env-change)",                desc = "Change surrounding command" },
+    { "<leader>cm",  "<plug>(vimtex-env-change-math)",           desc = "Change surrounding math environment" },
+    { "<leader>cd",  "<plug>(vimtex-delim-change)",              desc = "Change surrounding math environment" },
 })
