@@ -38,9 +38,6 @@ return {
         },
         jupynium_file_pattern = { "*.ju.*" },
         use_default_keybindings = false,
-        textobjects = {
-            use_default_keybindings = false,
-        },
         syntax_highlight = {
             enable = true,
         },
