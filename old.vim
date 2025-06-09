@@ -107,3 +107,7 @@ let g:vim_markdown_strikethrough = 1
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_borderless_table = 1
 " }}}
+
+" Copilot {{{
+let g:copilot_no_tab_map = v:true
+" }}}
