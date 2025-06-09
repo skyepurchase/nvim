@@ -75,11 +75,6 @@ whichkey.add({
     { "<leader>jj",  jup_textobj.goto_next_cell_separator(),     desc = "Go to next cell",                    silent = true },
     { "<leader>jg",  jup_textobj.goto_current_cell_separator(),  desc = "Go to top of cell",                  silent = true },
 
-    { "aj",          jup_textobj.select_cell(true, false),       desc = "Select around cell",                 mode = "v" },
-    { "ij",          jup_textobj.select_cell(false, false),      desc = "Select inside cell",                 mode = "v" },
-    { "aJ",          jup_textobj.select_cell(true, true),        desc = "Select surrounding cell",            mode = "v" },
-    { "iJ",          jup_textobj.select_cell(false, true),       desc = "Select inside surrounding cell",     mode = "v" },
-
     -- Vimtex
     { "<leader>v",   group = "Vimtex" },
     { "<leader>vc",  "<plug>(vimtex-compile)",                   desc = "Start continuous latex compilation" },
