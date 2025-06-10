@@ -49,18 +49,19 @@ whichkey.add({
     { "<leader>gp",  "<cmd>Git push<CR>",                          desc = "Git push" },
     { "<leader>gs",  "<cmd>Git<CR>",                               desc = "Git status" },
     { "<leader>gz",  "<cmd>Git blame<CR>",                         desc = "Git blame" },
+    { "<leader>gw",  "<cmd>Gwrite<CR>",                            desc = "Git stage entire file" },
 
     { "<leader>gl",  group = "Commit (log) history" },
     { "<leader>glb", telescope_builtin.git_bcommits,               desc = "Buffer commits" },
     { "<leader>glc", telescope_builtin.git_commits,                desc = "Git commits" },
     { "<leader>gls", telescope_builtin.git_stash,                  desc = "Git stash" },
 
-    { "<leader>gh",  group = "Git hunks" },
-    { "<leader>ghu", "<Plug>(GitGutterUndoHunk)",                  desc = "Reset hunk" },
-    { "<leader>ghS", "<Plug>(GitGutterStageHunk)",                 desc = "Stage hunk" },
-    { "<leader>ghn", "<Plug>(GitGutterNextHunk)",                  desc = "Next hunk" },
-    { "<leader>ghp", "<Plug>(GitGutterPrevHunk)",                  desc = "Previous hunk" },
-    { "<leader>ghs", "<Plug>(GitGutterPreviewHunk)",               desc = "Preview hunk" },
+    { "<leader>h",   group = "Git hunks" },
+    { "<leader>hu",  "<Plug>(GitGutterUndoHunk)",                  desc = "Reset hunk" },
+    { "<leader>hS",  "<Plug>(GitGutterStageHunk)",                 desc = "Stage hunk" },
+    { "<leader>hn",  "<Plug>(GitGutterNextHunk)",                  desc = "Next hunk" },
+    { "<leader>hp",  "<Plug>(GitGutterPrevHunk)",                  desc = "Previous hunk" },
+    { "<leader>hs",  "<Plug>(GitGutterPreviewHunk)",               desc = "Preview hunk" },
 
     -- Jupyter Notebooks
     { "<leader>j",   group = "Jupyter" },
@@ -95,8 +96,10 @@ whichkey.add({
         "<C-c>",
         "copilot#Accept('<CR>')",
         mode = "i",
-        expr = true,
+        noremap = true,
         silent = true,
+        expr = true,
+        replace_keycodes = false,
         desc = "Accept Copilot suggestion"
     },
 
