@@ -14,8 +14,6 @@ return {
             }
         },
         config = function()
-            local lspconfig = require("lspconfig")
-
             local on_attach = function(client, bufnr)
                 if client.server_capabilities.documentFormattingProvider then
                     vim.api.nvim_create_autocmd(
@@ -39,31 +37,43 @@ return {
                 vim.lsp.protocol.make_client_capabilities()
             )
 
-            lspconfig.ts_ls.setup({
+            vim.lsp.config("ts_ls", {
                 on_attach = on_attach,
                 capabilities = capabilities,
             })
-            lspconfig.cssls.setup({
+            vim.lsp.enable("ts_ls")
+
+            vim.lsp.config("cssls", {
                 on_attach = on_attach,
                 capabilities = capabilities,
             })
-            lspconfig.html.setup({
+            vim.lsp.enable("cssls")
+
+            vim.lsp.config("html", {
                 on_attach = on_attach,
                 capabilities = capabilities,
             })
-            lspconfig.jsonls.setup({
+            vim.lsp.enable("html")
+
+            vim.lsp.config("jsonls", {
                 on_attach = on_attach,
                 capabilities = capabilities,
             })
-            lspconfig.eslint.setup({
+            vim.lsp.enable("jsonls")
+
+            vim.lsp.config("eslint", {
                 on_attach = on_attach,
                 capabilities = capabilities,
             })
-            lspconfig.pyright.setup({
+            vim.lsp.enable("eslint")
+
+            vim.lsp.config("pyright", {
                 on_attach = on_attach,
                 capabilities = capabilities,
             })
-            lspconfig.marksman.setup({
+            vim.lsp.enable("pyright")
+
+            vim.lsp.config("marksman", {
                 on_attach = on_attach,
                 capabilities = {
                     workspace = {
@@ -73,7 +83,9 @@ return {
                     }
                 },
             })
-            lspconfig.lua_ls.setup({
+            vim.lsp.enable("marksman")
+
+            vim.lsp.config("lua_ls", {
                 on_attach = on_attach,
                 capabilities = capabilities,
                 settings = {
@@ -84,6 +96,7 @@ return {
                     },
                 },
             })
+            vim.lsp.enable("lua_ls")
         end,
     },
     {
