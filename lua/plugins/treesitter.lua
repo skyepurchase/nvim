@@ -20,6 +20,7 @@ return {
                 "markdown",
                 "python",
                 "typescript",
+                "rust"
             },
             highlight = {
                 enable = true,

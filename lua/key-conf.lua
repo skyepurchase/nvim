@@ -103,6 +103,9 @@ whichkey.add({
         desc = "Accept Copilot suggestion"
     },
 
+    -- Lazy
+    { "<leader>u", ":Lazy update<CR>", desc = "Update the packages in Lazynvim"},
+
     -- Misc
     { "<leader>z", ":ZenMode<CR>", desc = "Toggle Zen mode" },
 })
