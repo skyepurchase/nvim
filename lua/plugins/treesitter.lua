@@ -3,6 +3,8 @@
 return {
     "nvim-treesitter/nvim-treesitter",
     event = { "BufReadPre", "BufNewFile" },
+    lazy = false,
+    branch = 'main',
     build = ":TSUpdate",
     dependencies = {
         "nvim-treesitter/nvim-treesitter-textobjects",
@@ -24,6 +26,7 @@ return {
             },
             highlight = {
                 enable = true,
+                disable = {"markdown"},
             },
             indent = {
                 enable = true,
