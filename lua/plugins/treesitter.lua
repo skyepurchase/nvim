@@ -21,10 +21,12 @@ return {
                 "lua",
                 "python",
                 "typescript",
+                "markdown",
             },
-            -- highlight = {
-            --     enable = true,
-            -- },
+            highlight = {
+                enable = true,
+                disable = {"markdown"},
+            },
             indent = {
                 enable = true,
             },
