@@ -24,7 +24,10 @@ return {
             },
             highlight = {
                 enable = true,
-                disable = {"markdown"},
+                disable = {
+                    "markdown",
+                    "yaml"
+                },
             },
             indent = {
                 enable = true,
