@@ -67,6 +67,12 @@ return {
             })
             vim.lsp.enable("eslint")
 
+            vim.lsp.config("bashls", {
+                on_attach = on_attach,
+                capabilities = capabilities,
+            })
+            vim.lsp.enable("bashls")
+
             vim.lsp.config("pyright", {
                 on_attach = on_attach,
                 capabilities = capabilities,
