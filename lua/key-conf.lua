@@ -91,21 +91,14 @@ whichkey.add({
     { "<leader>cm",  "<plug>(vimtex-env-change-math)",             desc = "Change surrounding math environment" },
     { "<leader>cd",  "<plug>(vimtex-delim-change)",                desc = "Change surrounding math environment" },
 
-    -- Copilot
-    {
-        "<C-c>",
-        "copilot#Accept('<CR>')",
-        mode = "i",
-        noremap = true,
-        silent = true,
-        expr = true,
-        replace_keycodes = false,
-        desc = "Accept Copilot suggestion"
-    },
+    -- Codecompanion
+    { "<leader>a",   group = "AI agents" },
+    { "<leader>ac",  ":CodeCompanionChat<CR>",                     desc = "AI chat bot" },
+    { "<leader>ai",  ":CodeCompanion<CR>",                         desc = "AI chat inline" },
 
     -- Lazy
-    { "<leader>u", ":Lazy update<CR>", desc = "Update the packages in Lazynvim"},
+    { "<leader>u",   ":Lazy update<CR>",                           desc = "Update the packages in Lazynvim" },
 
     -- Misc
-    { "<leader>z", ":ZenMode<CR>", desc = "Toggle Zen mode" },
+    { "<leader>z",   ":ZenMode<CR>",                               desc = "Toggle Zen mode" },
 })
