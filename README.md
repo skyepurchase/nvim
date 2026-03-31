@@ -1,3 +1,6 @@
+> [!WARNING]
+> This repository is stale! Active repository is available at [codeberg.org/skyepurchase](https://codeberg.org/skyepurchase/nvim)
+
 # My Neovim Config
 
 **Requires the `neovim` python package. Which ever python project manager you use make sure it always installs the python neovim package.**
